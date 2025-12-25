@@ -1,0 +1,24 @@
+# Compiled files
+*.o
+*.out
+*.exe
+demo/demo
+
+# Build directories
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Debug files
+*.dSYM/
+
+# Memory map dumps
+memory_map.txt
+
+# macOS
+.DS_Store
