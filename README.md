@@ -2,6 +2,7 @@
 
 A custom heap memory allocator implemented in C++ using direct memory mapping (`mmap`/`munmap`) with configurable allocation strategies.
 
+
 ## Features
 
 - **Direct Memory Mapping**: Uses `mmap`/`munmap` system calls instead of `new`/`delete` for explicit control over virtual memory
@@ -13,6 +14,7 @@ A custom heap memory allocator implemented in C++ using direct memory mapping (`
   - Hole list retrieval for debugging allocation state
   - Bitmap representation for O(1) word-level allocation queries
   - Memory map dump to file for analysis
+
 
 ## Architecture
 
@@ -36,6 +38,7 @@ A custom heap memory allocator implemented in C++ using direct memory mapping (`
                               (coalesce adjacent)           (best-fit/worst-fit)
 ```
 
+
 ## API Reference
 
 ### Core Methods
@@ -56,12 +59,14 @@ A custom heap memory allocator implemented in C++ using direct memory mapping (`
 | `getBitmap()` | Returns bitmap where `1` = allocated word |
 | `dumpMemoryMap(char* filename)` | Writes hole list to file |
 
+
 ## Building
 
 ```bash
 make          # Build library and demo
 make clean    # Remove build artifacts
 ```
+
 
 ## Usage
 
@@ -94,6 +99,7 @@ int main() {
 }
 ```
 
+
 ## Allocation Strategies Explained
 
 ### Best-Fit
@@ -118,12 +124,14 @@ Holes:    [5 words] [3 words] [10 words]
 Selected: [10 words]    leaves 7-word hole
 ```
 
+
 ## Technical Details
 
 - **Word Size**: Configurable (typically 4 or 8 bytes)
 - **Maximum Pool**: 65,535 words (16-bit offset addressing)
 - **Memory Mapping**: `MAP_PRIVATE | MAP_ANONYMOUS` for process-private allocation
 - **Thread Safety**: Not thread-safe (external synchronization required)
+
 
 ## File Structure
 
@@ -137,3 +145,12 @@ MemoryManager/
 ├── Makefile
 └── README.md
 ```
+
+
+## Author
+
+**Preston Hemmy**
+
+GitHub: [@prestonhemmy](https://github.com/prestonhemmy)
+
+LinkedIn: [Preston Hemmy](https://linkedin.com/in/prestonhemmy)
